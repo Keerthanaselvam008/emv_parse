@@ -15,8 +15,7 @@ class Program
 {
     static void Main()
     {
-        string filePath = "emv_tags.txt"; // Update with your file path
-
+        string filePath = "emv_tags.txt"; 
         try
         {
             string emvData = File.ReadAllText(filePath);
@@ -112,11 +111,11 @@ class Program
 
             TLV emvTag = new TLV
             {
-                Id = tagId, // Use only the tagId without tagIdSecondHalf
+                Id = tagId, 
                 TagIdSecondHalf = tagIdSecondHalf,
                 Length = tagLength,
                 Value = tagValue,
-                Name = GetTagName(emvTags, tagId) // Get the name from the emvTags list
+                Name = GetTagName(emvTags, tagId)
             };
 
             if (tagId.StartsWith("9F") || tagId.StartsWith("5F"))
@@ -134,7 +133,7 @@ class Program
 
     static string GetTagName(List<TLV> emvTags, string tagId)
     {
-        // Find the tag with the specified tagId and return its Name property
+       
         var tag = emvTags.Find(t => t.Id == tagId);
         return tag?.Name ?? "";
     }
