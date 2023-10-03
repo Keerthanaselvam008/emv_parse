@@ -50,7 +50,7 @@ class Program
 
             (List<TLV> non9F5FTags, List<TLV> _9F5FTags) = ParseEMVData(emvData, emvTags);
 
-            // Print the parsed tags
+            
             Console.WriteLine("Non-9F5F Tags:");
             foreach (var tag in non9F5FTags)
             {
